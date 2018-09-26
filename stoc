@@ -1,0 +1,22 @@
+// ==UserScript==
+// @name         Sticky Table of Contents - Champion.gg
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       Cee
+// @match        https://champion.gg/*
+// @grant        none
+// @require      http://code.jquery.com/jquery-latest.js
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    $(document).ready(function() {
+
+        $("div[ng-controller=\"generalChampion\"] h2").each(function(i) {
+            $(this).attr("id", "stoc__section-heading-" + (i+1));
+        });
+
+    });
+})();
