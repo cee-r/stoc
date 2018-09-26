@@ -10,5 +10,5 @@ Initial idea brainstorm
 ### Solutions
 
 * Review information hierarchy to see how content can be sorted
-..* Organize by need or stages of a player going into a match:
-... DRAFT. Player might need information on champ match ups.\
+··* Organize by need or stages of a player going into a match:
+··· DRAFT. Player might need information on champ match ups.\
