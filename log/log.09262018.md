@@ -14,6 +14,7 @@ Initial idea brainstorm
         - DRAFT. Player might need information on champ match ups (Counters, etc).
         - LOAD OUT. Player would need info on stuff to be set before the match loads (Runes, Summoners)
         - IN GAME. Player would need info on stuff to get in game (Skill order, Items, etc.)
+        - [Info Hierarchy]((notes/ux-info-heirarchy.md)
 * Add a skip to content functionality that is always available regardless of where you are on the page
     - Anchor links to header
     - Sticky menu of some sort
@@ -23,3 +24,5 @@ Initial idea brainstorm
 
 * Possibly a slide out side panel with toggle
 * Would need to find all headings and add ids for anchor
+
+![Rough sketch](notes/ux-draft.png)
