@@ -16,3 +16,5 @@ Initial Build
 - [ ] Organize content
 - [ ] Fix and add styling tweaks
 - [ ] Add UX improvement to important sections, interactive elements
+- [ ] Scrolling animation?
+- [ ] Style details

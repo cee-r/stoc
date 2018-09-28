@@ -21,7 +21,7 @@
 
       // Style
       $('html > head').append(fontAwesome + stocCSS);
-      $( "body" ).addClass( "stoc__body" );
+      $( 'body' ).addClass('stoc__body').attr('id', 'top');
 
 
       // Build Side Panel
@@ -40,8 +40,11 @@
       // Generate ToC
 
       var ToC =
-      "<nav role='navigation' class='stoc__toc'>" +
-      "<ul>";
+      '<nav role="navigation" class="stoc__toc">' +
+      '<ul class="unsorted">';
+
+
+
       var heading, title, link;
 
       $('div[ng-controller="generalChampion"] h2').each(function(i) {
@@ -52,21 +55,37 @@
         link = '#' + $(this).attr('id');
 
         heading =
-          "<li>" +
-            "<a href='" + link + "'>" +
+          '<li class="sotc__topic-' + (i+1) + '">' +
+            '<a href="' + link + '">' +
               title +
-            "</a>" +
-          "</li>";
+            '</a>' +
+          '</li>';
 
         ToC += heading;
 
       });
 
+
       ToC +=
       "</ul>" +
-      "</nav>";
+      '<a class="go-search" href="#top">Search</a>' +
+      '<div class="draft"><h3>Match Ups</h3><ul class="matchups"></ul></div>' +
+      '<div class="loadout"><h3>Runes</h3><ul class="runes"></ul> <h3>Summoners</h3><ul class="summoners"></ul></div>' +
+      '<div class="ingame"><h3>Skills</h3><ul class="skills"></ul> <h3>Builds</h3><ul class="builds"></ul> <h3>Starters</h3><ul class="starters"></ul> <h3>Trinket</h3><ul class="trinket"></ul></div>' +
+      '<div class="general"><h3>Analytics</h3><ul class="analytics"></ul><h3>Misc</h3><ul class="misc"></ul></div>' +
+      '</nav>';
 
-      $(".stoc__container").prepend(ToC);
+      $('.stoc__container').prepend(ToC);
 
+      // Manual sort
+      $('.sotc__topic-20, .sotc__topic-21').appendTo('.matchups');
+      $('.sotc__topic-19, .sotc__topic-14').appendTo('.runes');
+      $('.sotc__topic-10, .sotc__topic-11').appendTo('.summoners');
+      $('.sotc__topic-12, .sotc__topic-13').appendTo('.skills');
+      $('.sotc__topic-15, .sotc__topic-16').appendTo('.builds');
+      $('.sotc__topic-17, .sotc__topic-18').appendTo('.starters');
+      $('.sotc__topic-6').appendTo('.trinket');
+      $('.sotc__topic-1, .sotc__topic-2, .sotc__topic-5, .sotc__topic-4, .sotc__topic-3, .sotc__topic-7, .sotc__topic-8, .sotc__topic-9').appendTo('.analytics');
+      $('.sotc__topic-22').appendTo('.misc');
   });
 })();
