@@ -1,4 +1,5 @@
 $primary: #0a7523;
+$accent: #F5C056;
 $l-gray: #F2F2F3;
 $m-gray: #C8CDD0;
 $d-gray: #415058;
@@ -7,6 +8,10 @@ $black: #1F292E;
 $animate: .3s ease-in-out !important;
 
 .stoc {
+
+  * {
+    box-sizing: border-box !important;
+  }
 
   &__body {
 
@@ -31,6 +36,8 @@ $animate: .3s ease-in-out !important;
     .logo-holder{
       width: 100% !important;
       text-align: center !important;
+      float: none;
+      margin: 0;
     }
     .navbar {
       padding: 2em;
@@ -38,6 +45,56 @@ $animate: .3s ease-in-out !important;
 
     .navbar-brand {
       float: none;
+      height: auto;
+      line-height: 1;
+      display: block;
+      text-align: center;
+
+      img {
+        margin: 0 auto;
+        margin-left: 10px;
+        width: 100%;
+      }
+    }
+
+    .search-holder {
+      float: none;
+      top: auto;
+      left: auto;
+      margin: .5em 0;
+
+      .search-fb-holder {
+        width: 50%;
+        margin: auto;
+
+        .input-group {
+          top: 0;
+          display: flex;
+
+          input {
+            flex-grow: 1;
+            flex-basis: auto;
+          }
+
+          ul.dropdown-menu {
+            width: 100%;
+          }
+
+          .input-group-btn {
+            width: auto;
+            display: unset;
+            cursor: pointer;
+
+            &:hover, &:focus {
+              opacity: .9;
+            }
+
+            span {
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
 
     .analysis-holder {
@@ -48,6 +105,34 @@ $animate: .3s ease-in-out !important;
       margin-top: 20px !important;
       padding-top: 30px !important;
     }
+
+    #back-to-top {
+    	text-align: center;
+    	width: 50px;
+    	height: 50px;
+      position: fixed;
+      display: none;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+    	z-index: 9999;
+      border: 1px solid $d-gray !important;
+
+      a {
+        display: block;
+        color: $black;
+        background-color: $accent;
+        font-size: 25px;
+        line-height: 48px;
+        transition: all $animate;
+
+        &:hover {
+          color: $l-gray;
+          background-color: $black;
+        }
+      }
+
+    }
   }
 
   &__container {
@@ -55,15 +140,21 @@ $animate: .3s ease-in-out !important;
     height:100%;
     position:fixed;
     top:0;
-    left: -350px;
+    left: -340px;
     padding: .5em 1em;
     background: $l-gray;
+    border-right: 10px solid $accent;
     z-index: 9999;
     box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
     transition: left $animate;
 
     &.active {
       left: 0;
+    }
+
+    *::selection {
+      color: $black;
+      background: $accent;
     }
   }
 
@@ -74,14 +165,15 @@ $animate: .3s ease-in-out !important;
     right: -50px;
     box-sizing: border-box;
     padding: 1em;
-    background: $l-gray;
+    background: $accent;
     width: 50px;
     text-align: center;
     color: $black;
     border-radius: 0 5px 5px 0;
+    transition: color $animate;
 
     &:hover, &:focus {
-      color: $primary;
+      color: $d-gray;
     }
 
     .fas {
@@ -91,7 +183,7 @@ $animate: .3s ease-in-out !important;
 
   &__toc {
 
-    a.go-search {
+    /*a.go-search {
       display: block;
       text-align: center;
       padding: 1em;
@@ -105,23 +197,30 @@ $animate: .3s ease-in-out !important;
         text-decoration: none;
         opacity: .8;
       }
-    }
+    }*/
 
     h3 {
       color: $black;
       font-size: 16px;
       line-height: 1;
-      margin: 1em 0;
+      margin: 1em 0 .5em 0;
+      text-align: center;
     }
 
     div {
-      border-top: 1px solid $m-gray;
+      //border-top: 1px solid $m-gray;
       border-color: rgba($m-gray, .5);
       margin: .5em auto;
       padding: 0 .5em;
 
       &.draft {
-        border: 0;
+        //border: 0;
+        &:before {
+          content: 'Draft';
+          color:$d-gray;
+          font-size: 10px;
+          text-transform: uppercase;
+        }
       }
     }
 
@@ -129,18 +228,29 @@ $animate: .3s ease-in-out !important;
       margin:0;
       padding:0;
       list-style: none;
+      text-align: center;
 
       &.unsorted {
         display: none !important;
       }
 
+      li {
+        margin-bottom: 5px;
+      }
+
       a {
-        color: $primary;
+        display: block;
+        border: 1px solid $m-gray;
+        padding: 10px 5px;
+        color: $black;
         font-size: 12px;
         line-height: 14px;
+        transition: all $animate;
 
         &:hover {
           color: $black;
+          background: $accent;
+          text-decoration: none;
         }
       }
     }

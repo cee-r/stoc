@@ -55,7 +55,7 @@
         link = '#' + $(this).attr('id');
 
         heading =
-          '<li class="sotc__topic-' + (i+1) + '">' +
+          '<li class="stoc__topic-' + (i+1) + '">' +
             '<a href="' + link + '">' +
               title +
             '</a>' +
@@ -68,24 +68,49 @@
 
       ToC +=
       "</ul>" +
-      '<a class="go-search" href="#top">Search</a>' +
+      //'<a class="go-search" href="#top">Search</a>' +
       '<div class="draft"><h3>Match Ups</h3><ul class="matchups"></ul></div>' +
       '<div class="loadout"><h3>Runes</h3><ul class="runes"></ul> <h3>Summoners</h3><ul class="summoners"></ul></div>' +
-      '<div class="ingame"><h3>Skills</h3><ul class="skills"></ul> <h3>Builds</h3><ul class="builds"></ul> <h3>Starters</h3><ul class="starters"></ul> <h3>Trinket</h3><ul class="trinket"></ul></div>' +
-      '<div class="general"><h3>Analytics</h3><ul class="analytics"></ul><h3>Misc</h3><ul class="misc"></ul></div>' +
+      '<div class="ingame"><h3>Skills</h3><ul class="skills"></ul> <h3>Builds</h3><ul class="builds"></ul> <h3>Trinket & Starters</h3><ul class="starters"></ul></div>' +
+      '<div class="general"><h3>Analytics</h3><ul class="analytics"></ul></div>' +
       '</nav>';
 
       $('.stoc__container').prepend(ToC);
 
       // Manual sort
-      $('.sotc__topic-20, .sotc__topic-21').appendTo('.matchups');
-      $('.sotc__topic-19, .sotc__topic-14').appendTo('.runes');
-      $('.sotc__topic-10, .sotc__topic-11').appendTo('.summoners');
-      $('.sotc__topic-12, .sotc__topic-13').appendTo('.skills');
-      $('.sotc__topic-15, .sotc__topic-16').appendTo('.builds');
-      $('.sotc__topic-17, .sotc__topic-18').appendTo('.starters');
-      $('.sotc__topic-6').appendTo('.trinket');
-      $('.sotc__topic-1, .sotc__topic-2, .sotc__topic-5, .sotc__topic-4, .sotc__topic-3, .sotc__topic-7, .sotc__topic-8, .sotc__topic-9').appendTo('.analytics');
-      $('.sotc__topic-22').appendTo('.misc');
+      $('.stoc__topic-20, .stoc__topic-21').appendTo('.stoc__toc .matchups');
+      $('.stoc__topic-19, .stoc__topic-14').appendTo('.stoc__toc .runes');
+      $('.stoc__topic-10, .stoc__topic-11').appendTo('.stoc__toc .summoners');
+      $('.stoc__topic-12, .stoc__topic-13').appendTo('.stoc__toc .skills');
+      $('.stoc__topic-15, .stoc__topic-16').appendTo('.stoc__toc .builds');
+      $('.stoc__topic-17, .stoc__topic-18, .stoc__topic-6').appendTo('.stoc__toc .starters');
+      $('.stoc__topic-1, .stoc__topic-2, .stoc__topic-5, .stoc__topic-4, .stoc__topic-3, .stoc__topic-7, .stoc__topic-8, .stoc__topic-9, .stoc__topic-22').appendTo('.general .analytics');
+
+
+      $('.stoc__toc a').click(function(){
+          $('html, body').animate({
+              scrollTop: $( $.attr(this, 'href') ).offset().top
+          }, 500);
+          return false;
+      });
+
+      // Back To Top
+
+      $( 'body' ).append('<div id="back-to-top"><a role="button"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>');
+
+    	$(window).scroll(function() {
+
+    		if($(this).scrollTop() != 0) {
+    			$('#back-to-top').fadeIn();
+    		} else {
+    			$('#back-to-top').fadeOut();
+    		}
+
+    	});
+
+    	$('#back-to-top').click(function() {
+    		$('body,html').animate({scrollTop:0},800);
+    	});
+
   });
 })();

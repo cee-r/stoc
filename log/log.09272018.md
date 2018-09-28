@@ -18,3 +18,7 @@ Initial Build
 - [ ] Add UX improvement to important sections, interactive elements
 - [ ] Scrolling animation?
 - [ ] Style details
+
+### Thoughts
+
+* Use role="button" instead of anchor ref for buttons
