@@ -8,6 +8,10 @@ As a casual player who needs access to quick info about champs, I find champion.
 
 This script aims to reorganize the info as well as provide skip to content for easy access.
 
+Mac/PC
+Chrome
+Tampermonkey
+
 ## Usage
 
 

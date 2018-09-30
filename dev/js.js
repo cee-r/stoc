@@ -16,7 +16,8 @@
 
       // Resources
       var fontAwesome = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">';
-      var stocCSS = '<link rel="stylesheet" href="http://localhost:8080/stoc/dev/css.css">';
+      //var stocCSS = '<link rel="stylesheet" href="http://localhost:8080/stoc/dev/css.css">'; //local-mbp-w
+      var stocCSS = '<link rel="stylesheet" href="http://localhost/_stoc/dev/css.css">'; //local-pc
       //var stocCSS = '<style type="text/css">.stoc__container{width:300px; height:100%; position:fixed; top:0; background: red;}</style>';
 
       // Style
@@ -78,18 +79,27 @@
       $('.stoc__container').prepend(ToC);
 
       // Manual sort
-      $('.stoc__topic-20, .stoc__topic-21').appendTo('.stoc__toc .matchups');
+
+      if($('.stoc__topic-22 a:contains("Reddit")').length > 0) {
+        $('.stoc__topic-20, .stoc__topic-21').appendTo('.stoc__toc .matchups');
+        $('.stoc__topic-1, .stoc__topic-2, .stoc__topic-5, .stoc__topic-4, .stoc__topic-3, .stoc__topic-7, .stoc__topic-8, .stoc__topic-9, .stoc__topic-22').appendTo('.general .analytics');
+      } else {
+        $('.stoc__topic-20, .stoc__topic-21, .stoc__topic-22, .stoc__topic-23, .stoc__topic-24, .stoc__topic-25').appendTo('.stoc__toc .matchups');
+        $('.stoc__topic-1, .stoc__topic-2, .stoc__topic-5, .stoc__topic-4, .stoc__topic-3, .stoc__topic-7, .stoc__topic-8, .stoc__topic-9, .stoc__topic-26').appendTo('.general .analytics');
+      }
+
       $('.stoc__topic-19, .stoc__topic-14').appendTo('.stoc__toc .runes');
       $('.stoc__topic-10, .stoc__topic-11').appendTo('.stoc__toc .summoners');
       $('.stoc__topic-12, .stoc__topic-13').appendTo('.stoc__toc .skills');
       $('.stoc__topic-15, .stoc__topic-16').appendTo('.stoc__toc .builds');
       $('.stoc__topic-17, .stoc__topic-18, .stoc__topic-6').appendTo('.stoc__toc .starters');
-      $('.stoc__topic-1, .stoc__topic-2, .stoc__topic-5, .stoc__topic-4, .stoc__topic-3, .stoc__topic-7, .stoc__topic-8, .stoc__topic-9, .stoc__topic-22').appendTo('.general .analytics');
 
+      var stickyOffset = $('.navbar').height();
+      //console.log(stickyOffset);
 
       $('.stoc__toc a').click(function(){
           $('html, body').animate({
-              scrollTop: $( $.attr(this, 'href') ).offset().top
+              scrollTop: $( $.attr(this, 'href') ).offset().top-stickyOffset
           }, 500);
           return false;
       });
@@ -111,6 +121,52 @@
     	$('#back-to-top').click(function() {
     		$('body,html').animate({scrollTop:0},800);
     	});
+
+
+      // Sticky Header
+
+      $('.navbar').addClass('sticky');
+
+      var sticky = $(".sticky");
+      var headerOffset = $('header').height();
+
+    	$(window).scroll(function() {
+    	  if( $(this).scrollTop() > headerOffset ) {
+    	    sticky.addClass("sticky-on");
+          $('.navigation-rank-wrapper').appendTo('.analysis-holder');
+    	  } else {
+    	    sticky.removeClass("sticky-on");
+          $('.navigation-rank-wrapper').appendTo('.analysis-holder small');
+    	  }
+    	});
+
+
+
+      // Revamp - Champ Profile
+
+      $('.champion-profile > h1').prependTo('.champion-profile');
+      $('.champion-profile > ul').addClass('champ-role');
+      $('.champion-profile > ul li:first-child a').addClass('champ-pb');
+      $('.champion-profile .champ-img').wrap( "<div class='champ-img-pb'></div>" );
+      $('.champ-pb').html('Pro Builds').appendTo('.champ-img-pb');
+
+      $('.champ-role li').each(function(i) {
+        $(this).find('small').appendTo($(this).find('a'));
+      });
+
+      var roleCount = $('.champ-role li').length;
+
+      console.log(roleCount);
+
+      if( roleCount < 4) {
+        $('.champ-role').addClass('two-roles');
+      } else if( roleCount < 5) {
+        $('.champ-role').addClass('three-roles');
+      } else if( roleCount < 6) {
+        $('.champ-role').addClass('four-roles');
+      } else if( roleCount < 7) {
+        $('.champ-role').addClass('five-roles');
+      }
 
   });
 })();
