@@ -20,3 +20,4 @@
     - Margin not working on initial scroll when fixed header isn't visible
 * Frequent and Win % order consistency
 * Revamp General stats, ToC and area
+* Fix most frequent rune weirdness...
