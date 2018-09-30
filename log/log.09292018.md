@@ -21,3 +21,4 @@
 * Frequent and Win % order consistency
 * Revamp General stats, ToC and area
 * Fix most frequent rune weirdness...
+* Remove border
