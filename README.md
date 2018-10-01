@@ -1,6 +1,6 @@
 # Sticky Table of Contents for Champion.gg
 
-A script to add a sticky table of contents for champion pages on champion.gg and organize champion info to improve usability and readability.
+A script to add a sticky table of contents for champion pages on champion.gg to organize champion info and improve usability and readability.
 
 
 ## Overview
