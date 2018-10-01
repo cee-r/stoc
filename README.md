@@ -5,7 +5,7 @@ A script to add a sticky table of contents for champion pages on champion.gg to 
 
 ## Overview
 
-I occasionally use Champion.gg for quick info when I'm playing League of Legends. I find the site informative but overwhelming to use so I made a script that fixes some UX pain points.
+I occasionally use Champion.gg for quick info when I'm playing League of Legends. I find the site informative but overwhelming to use, especially in the time constraints of champ select, so I made a script that fixes some UX pain points.
 
 #### Table of Contents
 
