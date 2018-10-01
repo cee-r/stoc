@@ -20,7 +20,8 @@ $animate: .3s ease-in-out !important;
     transition: all $animate;
 
     &.active {
-      left: 100px;
+      left: 150px;
+      overflow-x: hidden;
 
       .sticky-on {
         left: 100px !important;
@@ -256,18 +257,21 @@ $animate: .3s ease-in-out !important;
 
     // Sections
 
+    // champ prof
     .champion-profile {
       border: 0 !important;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 2em;
+      float: none;
 
       h1 {
         flex: 0 0 100%;
         text-align: left;
         border-bottom: 1px solid $d-gray;
         border-color: rgba($d-gray, .5);
+        padding-bottom: .5em;
       }
 
       .champ-img-pb {
@@ -405,6 +409,44 @@ $animate: .3s ease-in-out !important;
       }
     }
 
+    // stats
+
+    .show-champ-stats {
+      display: block;
+      width: 95%;
+      margin: auto;
+      border: 1px solid $l-gray;
+      color: $l-gray;
+      padding: 1em;
+      text-align: center;
+      text-transform: uppercase;
+      transition: all $animate;
+
+      &:hover {
+        text-decoration: none;
+        background: $d-gray;
+        border-color: $secondary;
+        color: $secondary;
+        cursor: pointer;
+      }
+    }
+
+    div.champion-area .container-fluid .row>div {
+      border:0;
+    }
+
+    .trinket-stats {
+      width: 50%;
+      margin: auto;
+
+      div {
+        width: 50% !important;
+
+        .build-text {
+          width: 100% !important;
+        }
+      }
+    }
 
     #back-to-top {
     	text-align: center;
@@ -501,7 +543,7 @@ $animate: .3s ease-in-out !important;
     }*/
 
     h3 {
-      margin: 1em 0 .5em 0;
+      margin: 1em 0;
       color: $black;
       font-size: 14px;
       text-transform: uppercase;

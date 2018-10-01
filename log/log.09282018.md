@@ -10,7 +10,6 @@
 ### To Do
 
 - [ ] Organize and style ToC links
-- [ ] Organize content
 - [ ] Fix and add styling tweaks
 - [ ] Add UX improvement to important sections, interactive elements
 - [ ] Style details

@@ -16,9 +16,7 @@
 
       // Resources
       var fontAwesome = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">';
-      //var stocCSS = '<link rel="stylesheet" href="http://localhost:8080/stoc/dev/css.css">'; //local-mbp-w
-      var stocCSS = '<link rel="stylesheet" href="http://localhost/_stoc/dev/css.css">'; //local-pc
-      //var stocCSS = '<style type="text/css">.stoc__container{width:300px; height:100%; position:fixed; top:0; background: red;}</style>';
+      var stocCSS = '<link rel="stylesheet" href="https://cee-r.github.io/stoc/css.css">';
 
       // Style
       $('html > head').append(fontAwesome + stocCSS);

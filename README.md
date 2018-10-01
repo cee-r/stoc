@@ -1,18 +1,44 @@
 # Sticky Table of Contents for Champion.gg
 
-A script to add a sticky table of contents for champion.gg and organize champion info to improve usability and readability.
+A script to add a sticky table of contents for champion pages on champion.gg and organize champion info to improve usability and readability.
 
 ## Overview
 
-As a casual player who needs access to quick info about champs, I find champion.gg's current layout and organization of information to be a bit overwhelming. The in-depth information they provide is very useful but takes a bit to sift through, especially in the time constraints of champ select.
+I occasionally use Champion.gg for quick info when I'm playing League of Legends. I find the site informative but overwhelming to use so I made a script that fixes some UX pain points.
 
-This script aims to reorganize the info as well as provide skip to content for easy access.
+#### Table of Contents
 
-Mac/PC
-Chrome
-Tampermonkey
+* Built a slide panel and generated a sticky table of contents based on the headings to provide easy skip-to-content anchors.
+* Sorted the items based on info relevant information for each step heading into a match.
+
+![Sticky Table of Contents](notes/rdm-stoc.gif)
+
+#### Interactive / Navigational element tweaks
+
+* Made a minimal sticky header to ensure Champion Search and League Filter is always accessible.
+* Revamped the champion profile area. Mainly the role select area and pro builds link.
+* Added a back to top button.
+
+![Interactions](notes/rdm-interactions.gif)
+
+#### Chunking Content
+
+The flow of content and mark up is a bit weird to say the least but I tried to make it concise for my purposes.
+
+* Forced a smaller width layout
+* Hid analytics under a toggle.
+* Order of content isn't how the ToC is listed, but did the bare minimum of moving elements around to have related information closer in proximity.
 
 ## Usage
 
+Made and tested only using Chrome.
+
+* Add [Tampermonkey](https://tampermonkey.net/) add on to Chrome
+* Go to dashboard, add a new script and paste contents of stoc.v#.js
+* Visit a champion page on champion.gg and enable the script. (Might need to allow scripts to load if chrome blocks it.)
+
+![Interactions](notes/rdm-enable-script.png)
 
 ## Log
+
+* 09.30.2018 - Release
