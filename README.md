@@ -2,6 +2,7 @@
 
 A script to add a sticky table of contents for champion pages on champion.gg and organize champion info to improve usability and readability.
 
+
 ## Overview
 
 I occasionally use Champion.gg for quick info when I'm playing League of Legends. I find the site informative but overwhelming to use so I made a script that fixes some UX pain points.
@@ -29,6 +30,7 @@ The flow of content and mark up is a bit weird to say the least but I tried to m
 * Hid analytics under a toggle.
 * Order of content isn't how the ToC is listed, but did the bare minimum of moving elements around to have related information closer in proximity.
 
+
 ## Usage
 
 Made and tested only using Chrome.
@@ -39,6 +41,7 @@ Made and tested only using Chrome.
 
 ![Interactions](notes/rdm-enable-script.png)
 
+
 ## Log
 
-* 09.30.2018 - Release
+* 09.30.2018 - Release - [stoc.v1.js](stoc.v1.js)
