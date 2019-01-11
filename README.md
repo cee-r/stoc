@@ -7,6 +7,8 @@ A script to add a sticky table of contents for champion pages on champion.gg to 
 
 I occasionally use Champion.gg for quick info when I'm playing League of Legends. I find the site informative but overwhelming to use, especially in the time constraints of champ select, so I made a script that fixes some UX pain points.
 
+[Original Champion.gg Layout](notes/rdm-original-layout.png)
+
 #### Table of Contents
 
 * Built a slide panel and generated a sticky table of contents based on the headings to provide easy skip-to-content anchors.
@@ -39,7 +41,7 @@ Made and tested only using Chrome.
 * Go to dashboard, add a new script and paste contents of stoc.v#.js
 * Visit a champion page on champion.gg and enable the script. (Might need to allow scripts to load if chrome blocks it.)
 
-![Interactions](notes/rdm-enable-script.png)
+![Enable Script](notes/rdm-enable-script.png)
 
 
 ## Log
